@@ -1,0 +1,42 @@
+PROJECT SUMMARY
+
+ Data Preparation
+
+Converted the Date column to proper datetime format.
+Extracted the Week number from each date.
+Applied One-Hot Encoding to the Store variable to convert it into numerical features.
+Scaled continuous variables
+(Temperature, Fuel Price, CPI, Unemployment, Week)
+using StandardScaler.
+
+ Train–Test Split
+
+Dataset was split into:
+80% training data
+20% testing data
+
+The test set was kept untouched during training.
+
+. Model Building
+
+I tested multiple machine-learning models:
+ Gradient Boosting Regressor:
+Tuned using cross-validation to find best parameters.
+Showed strong performance and stability.
+Support Vector Regression (SVR):
+Tested Linear, Polynomial, and RBF kernels.
+Evaluated each using RMSE and R².
+Decision Tree Regressor:
+Used cross-validation to evaluate performance.
+Helps understand feature splits and interpretability.
+Neural Network:
+PCA was used to reduce features before feeding into a small MLP network.
+Cross-Validation
+Used K-Fold Cross Validation (5 folds).
+This method trains the model multiple times on different splits.
+Helps find the best hyperparameters and avoid overfitting.
+
+ Final Evaluation on Test Set
+
+Since the Gradient boost was the best model I applied my test set on it and the resuls was really similar compared to the actual weekly sales values.
+
